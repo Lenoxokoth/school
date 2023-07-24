@@ -1,0 +1,168 @@
+/* achievement */
+
+.achievement{
+    margin-top: 3rem;
+}
+
+.achievement-container{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 5rem;
+}
+.achievement-container-right p{
+    margin: 1rem 0 2rem;
+}
+
+.achieve-cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.achievement-card{
+    cursor: pointer;
+    background: var(--color-bg1);
+    padding: 1.6rem;
+    border-radius: 1rem;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.achievement-card:hover{
+    background: var(--color-bg2);
+    box-shadow: 0 3rem 3rem rgba(0, 0, 0, .3);
+}
+
+.achievement-icon{
+    background: var(--color-danger-variant);
+    padding: 0.4rem;
+    border-radius: 1rem;
+    display: inline-block;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.achievement-card:nth-child(2) .achievement-icon{
+    background: var(--color-primary);
+}
+
+.achievement-card:nth-child(3) .achievement-icon{
+    background: var(--color-success);
+}
+
+.achievement-card p{
+    margin-top: 1rem;
+}
+
+/* team */
+
+.teams{
+    background: var(--color-bg1);
+    box-shadow: inset 0 0 3rem rgba(0, 0, 0, .5);
+}
+
+.team-container{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
+}
+
+.team{
+    background: var(--color-bg2);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid transparent;
+}
+
+.team:hover{
+    background: transparent;
+    border-color: var(--color-primary);
+}
+
+.team .team-image img{
+    filter: saturate(0);
+}
+
+.team-image:hover img{
+    filter: saturate(1);
+}
+
+.team .team-info{
+    text-align: center;
+    margin-top: 1.4rem;
+}
+
+.team .team-info p{
+    color: var(--color-light);
+}
+
+.team .team-social{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -100%;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-primary);
+    border-radius: 1rem 0 0 1rem;
+    box-shadow: -2rem 0 2rem rgba(0, 0, 0, .3);
+    transition: var(--transition);
+}
+
+.team .team-social a{
+    padding: 1rem;
+}
+
+.team:hover
+.team-social{
+    right: 0;
+}
+
+
+/* tablet responsive */
+
+@media screen and (max-width: 1024px){
+   .achievement{
+    margin-top: 2rem;
+   }
+   .achievement-container{
+    grid-template-columns: 1fr;
+    gap: 4rem;
+   }
+   .achievement-container-right{
+    width: 80%;
+    margin: 0 auto;
+   }
+
+   /* team */
+   .team-container{
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+   }
+
+   .team{
+    padding: 1rem;
+   }
+}
+
+/* phone responsive */
+
+@media screen and (max-width: 600px){
+    .achieve-cards{
+        grid-template-columns: 1fr 1fr;
+        gap: 0.7rem;
+    }
+    .team-container{
+        grid-template-columns: 1fr 1fr;
+        gap: 0.7rem;
+    }
+
+    .team{
+        padding: 0;
+    }
+
+    .team p{
+        margin-bottom: 1.5rem;
+    }
+}
